@@ -1,4 +1,10 @@
 export default {
+    // Global server configuration (https://go.nuxtjs.dev/config-head)
+    server: {
+        port: 8080, // default: 3000
+        host: '127.0.0.5' // default: localhost
+    },
+
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
         title: 'nuxt-app-cv',

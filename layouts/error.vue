@@ -11,7 +11,7 @@ export default {
   name: 'NotFound',
   mounted () {
     window.setTimeout(() => {
-      window.location.replace('http://localhost:3000/')
+      window.location.replace('http://127.0.0.5:8080')
     }, 2000)
   }
 }

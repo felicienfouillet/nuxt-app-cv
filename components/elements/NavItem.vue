@@ -1,7 +1,7 @@
 <template>
-  <router-link :to="'\/' + this.path" class="nav-item">
+  <NuxtLink :to="'/' + this.path" class="nav-item">
     {{ title }}
-  </router-link>
+  </NuxtLink>
 </template>
 
 <script>

@@ -1,28 +1,5 @@
-@font-face {
-    font-family: dogica;
-    src: url(ui/dogica/dogica.ttf);
-}
-
-@font-face {
-    font-family: dogica-bold;
-    src: url(ui/dogica/dogicabold.ttf);
-}
-
-@font-face {
-    font-family: dogica-pixel;
-    src: url(ui/dogica/dogicapixel.ttf);
-}
-
-@font-face {
-    font-family: dogica-pixelbold;
-    src: url(ui/dogica/dogicapixelbold.ttf);
-}
-
-@font-face {
-    font-family: montserrat-regular;
-    src: url(ui/Montserrat/Montserrat-Regular.ttf);
-}
-
+@import url('./ui/montserrat.css');
+@import url('./ui/oswald.css');
 body {
     background-color: #3B3B3B;
     margin: 0;
@@ -34,9 +11,13 @@ body::-webkit-scrollbar {
 }
 
 * {
-    /* font-family: 'dogica'; */
-    font-family: 'Oswald', sans-serif;
-    /* font-family: 'montserrat-regular'; */
+    font-family: 'Montserrat-Regular', sans-serif;
+    text-decoration: none;
+    color: honeydew;
+}
+
+p {
+    font-family: 'Montserrat-Regular', sans-serif;
     text-decoration: none;
     color: honeydew;
 }
@@ -75,7 +56,8 @@ body::-webkit-scrollbar {
 }
 
 .nav-item {
-    font-family: 'dogica';
+    font-family: 'Montserrat-SemiBold';
+    font-size: 1.5em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,9 +112,8 @@ body::-webkit-scrollbar {
 }
 
 .footer p {
-    font-family: 'dogica-bold';
-    /* font-family: 'Oswald', sans-serif; */
-    font-size: 0.75em;
+    font-family: 'Oswald-Light', sans-serif;
+    font-size: 1em;
     margin-bottom: 0.5em;
 }
 
@@ -165,7 +146,4 @@ body::-webkit-scrollbar {
         min-width: 10em;
         padding: 15px 0;
     }
-    /* .footer i {
-        margin: 0 0.75em;
-    } */
 }
