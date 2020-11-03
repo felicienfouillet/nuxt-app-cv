@@ -4,7 +4,7 @@ A NuxtJS Website application - CV Félicien Fouillet
 
 ## To deploy on Docker
 1. Setup a Dockerfile:
-    ```bash
+    ```Dockerfile
     FROM node:alpine
 
     EXPOSE 80 8080
