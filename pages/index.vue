@@ -1,73 +1,121 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        nuxt-app-cv
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div class="grid-home">
+    <div class="projects">
+      <!-- <div class="container"> -->
+      <carousel>
+        <carousel-slide v-for="(slide, index) in slides" :key="slide" :index="index">
+          <!-- :key="slide" -->
+          <!-- <div style="position: absolute; left: 0; right: 0; text-align: center; top: 50%; color: red; font-size: 25px">{{index}}</div> -->
+          <div v-for="component in slide" :key="component" class="components">
+            <!-- :key="component" -->
+            <img :src="component">
+          </div>
+        </carousel-slide>
+      </carousel>
+      <!-- </div> -->
+    </div>
+    <div class="presentation">
+      <div class="container">
+        <h2>Objectif</h2>
+        <p>▪ Développer mes connaissances informatiques</p>
+        <p>▪ Mettre mes compétences au service des technologies de l’information</p>
+        <p>▪ Approfondir le développement web</p>
+      </div>
+    </div>
+    <div class="reco">
+      <div class="container">
+        <h2>Recommendations</h2>
+        <p>Vous trouverez ici mes recommendations</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import Carousel from '../components/carousel/Carousel'
+import CarouselSlide from '../components/carousel/CarouselSlide'
+
+export default {
+  name: 'Cv',
+  components: {
+    Carousel,
+    CarouselSlide
+  },
+  data () {
+    return {
+      slides: [
+        ['https://picsum.photos/id/257/500/200', 'https://picsum.photos/id/259/500/200', 'https://picsum.photos/id/261/500/200'],
+        ['https://picsum.photos/id/258/500/200', 'https://picsum.photos/id/260/500/200', 'https://picsum.photos/id/263/500/200'],
+        ['https://picsum.photos/id/88/500/200', 'https://picsum.photos/id/250/500/200', 'https://picsum.photos/id/268/500/200']
+      ]
+    }
+  }
+}
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<style scoped>
+
+.components img {
+    width: 100%;
 }
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.components {
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.grid-home {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: .5fr 6fr .5fr;
+    grid-template-rows: 1.5fr 1.5fr 1.5fr .1fr;
+    grid-row-gap: 0.4em;
+    grid-template-areas: 'projects projects projects' '. presentation .' '. reco .' '. . .';
 }
 
-.links {
-  padding-top: 15px;
+.projects {
+    grid-area: projects;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.4em;
+    background-color: #3B3B3B;
+    height: 100%;
+}
+
+.presentation {
+    grid-area: presentation;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.4em;
+    background-color: #3B3B3B;
+    height: 100%;
+}
+
+.reco {
+    grid-area: reco;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.4em;
+    background-color: #3B3B3B;
+    height: 100%;
+}
+
+@media (max-width: 950px) {
+    .grid-home {
+        display: grid;
+        width: 100vw;
+        /* height: 100vh; */
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1.5fr 2fr;
+        grid-row-gap: 0.4em;
+        grid-template-areas: 'projects projects' 'presentation presentation' 'reco reco';
+    }
 }
 </style>

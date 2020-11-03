@@ -1,62 +1,52 @@
 <template>
-  <div>
-    <Nuxt />
+  <div id="app">
+    <div class="grid">
+      <div class="navbar">
+        <div class="nav">
+          <div class="nav-group">
+            <nav-item title="cv" path="cv" />
+            <nav-item title="portfolio" path="portfolio" />
+          </div>
+
+          <div style="text-align: center;" class="nav-group name">
+            <nav-item class="active" title="Félicien Fouillet" path="" />
+          </div>
+
+          <div class="nav-group">
+            <nav-item title="blog" path="blog" />
+            <nav-item title="contact" path="contact" />
+          </div>
+        </div>
+      </div>
+
+      <Nuxt />
+
+      <div class="footer">
+        <div class="footer-group">
+          <a target="_blank" href="https://www.linkedin.com/in/f%C3%A9licien-fouillet-772591197/"><i class="fab fa-linkedin fa-2x" /></a>
+          <i class="fas fa-at fa-2x" />
+          <i class="fas fa-phone-square fa-2x" />
+        </div>
+
+        <div class="footer-group">
+          <p>© Félicien FOUILLET - 2020</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
+<script>
+// import { component } from 'vue/types/umd'
+import NavItem from '../components/elements/NavItem.vue'
+
+export default {
+  name: 'App',
+  components: { NavItem }
+}
+</script>
+
 <style>
-html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
+@import url('../assets/style.css');
+@import url('../assets/ui/fontawesome-5.15.0/css/all.css');
 </style>

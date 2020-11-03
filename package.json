@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.6",
+    "vue-radial-progress": "^0.3.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
