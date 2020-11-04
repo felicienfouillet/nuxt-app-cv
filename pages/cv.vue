@@ -62,8 +62,8 @@
 
           <!-- <progress-bar title="Espagnol" percent="60"></progress-bar> -->
 
-          <!-- <radial-progress-bar :completed-steps="70" completed_steps="70" title="Anglais" /> -->
-          <!-- <radial-progress-bar :completed-steps="50" completed_steps="50" title="Espagnol" /> -->
+          <radial-progress-bar :completed-steps="70" completed_steps="70" title="Anglais" />
+          <radial-progress-bar :completed-steps="50" completed_steps="50" title="Espagnol" />
         </div>
       </div>
     </div>
@@ -91,11 +91,11 @@
 <script>
 import Exp from './../components/experiences/Exp'
 import ProgressBar from './../components/elements/ProgressBar'
-// import RadialProgressBar from './../components/elements/RadialProgressBar'
+import RadialProgressBar from './../components/elements/RadialProgressBar'
 
 export default {
   name: 'Cv',
-  components: { Exp, ProgressBar }
+  components: { Exp, ProgressBar, RadialProgressBar }
 }
 </script>
 
