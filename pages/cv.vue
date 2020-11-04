@@ -91,11 +91,11 @@
 <script>
 import Exp from './../components/experiences/Exp'
 import ProgressBar from './../components/elements/ProgressBar'
-import RadialProgressBar from './../components/elements/RadialProgressBar'
+// import RadialProgressBar from './../components/elements/RadialProgressBar'
 
 export default {
   name: 'Cv',
-  components: { Exp, ProgressBar, RadialProgressBar }
+  components: { Exp, ProgressBar }
 }
 </script>
 
