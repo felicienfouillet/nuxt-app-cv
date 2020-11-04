@@ -1,6 +1,6 @@
 FROM node:10
 
-EXPOSE 8080 8080
+EXPOSE 80 80
 
 # Create app directory
 WORKDIR /app

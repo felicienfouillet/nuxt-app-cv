@@ -15,5 +15,5 @@ A NuxtJS Website application - CV Félicien Fouillet
 
 3. Deploy the docker image on a container:
     ```bash
-    docker container run --name <name> –d -it -p 8080:8080 -v nuxt-app-cv:/app <nom>/<nom de l’image>
+    docker container run --name <name> –d -it -p 80:80 -v nuxt-app-cv:/app <nom>/<nom de l’image>
     ```
