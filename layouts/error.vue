@@ -11,7 +11,8 @@ export default {
   name: 'NotFound',
   mounted () {
     window.setTimeout(() => {
-      window.location.replace('http://127.0.0.5:8080')
+      const host = location.hostname
+      window.location.replace('http://' + host + ':8080')
     }, 2000)
   }
 }
