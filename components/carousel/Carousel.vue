@@ -1,6 +1,8 @@
 <template>
   <div class="carousel">
-    <slot />
+    <div class="slides">
+      <slot />
+    </div>
     <!-- <button @click.prevent="prev" class="carousel-nav prev"> -->
     <i class="carousel-nav prev fas fa-chevron-left" style="color: honeydew" @click.prevent="prev" />
     <!-- </button> -->
@@ -9,7 +11,7 @@
     <!-- </button> -->
 
     <div class="carousel-pagination">
-      <button v-for="n in slidesCount" :key="n-1" class="carousel-pointer" :class="{ active: n - 1 == index }" @click="goto(n-1)" />
+      <button v-for="n in Math.round(this.slidesCount/3)" :key="n-1" class="carousel-pointer" :class="{ active: n - 1 == index}" @click="goto(n-1)" />
     </div>
   </div>
 </template>
@@ -36,7 +38,7 @@ export default {
     next () {
       this.index++
       this.direction = 'right'
-      if (this.index >= this.slidesCount) {
+      if (this.index >= Math.round(this.slidesCount / 3)) {
         this.index = 0
       }
     },
@@ -44,7 +46,7 @@ export default {
       this.index--
       this.direction = 'left'
       if (this.index < 0) {
-        this.index = this.slidesCount - 1
+        this.index = Math.round(this.slidesCount / 3) - 1
       }
     },
     goto (index) {
@@ -56,40 +58,46 @@ export default {
 </script>
 
 <style scoped>
-.carousel {
+  .carousel {
     position: relative;
-    width: 100%;
+    width: 95%;
     margin: .5em;
     overflow: hidden;
-}
+  }
 
-.carousel-slide {
+  .slides {
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
+  }
 
-.carousel-nav {
+  .carousel-slide {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .carousel-nav {
     position: absolute;
     top: 50%;
     margin-top: -1%;
     left: 2.5%;
     font-size: 20px;
-}
+  }
 
-.carousel-nav.next {
+  .carousel-nav.next {
     right: 2.5%;
     left: auto;
-}
+  }
 
-.carousel-pagination {
+  .carousel-pagination {
     position: relative;
     left: 0;
     right: 0;
     text-align: center;
-}
+  }
 
-.carousel-pointer {
+  .carousel-pointer {
     display: inline-block;
     margin: 0 2px;
     border-radius: 50%;
@@ -97,13 +105,13 @@ export default {
     width: .8em;
     height: .8em;
     opacity: 0.8;
-}
+  }
 
-.carousel-pointer:hover, .carousel-pointer:focus {
+  .carousel-pointer:hover, .carousel-pointer:focus {
     outline: none;
-}
-.carousel-pointer.active {
+  }
+  .carousel-pointer.active {
     outline: none;
     background-color: rgba(0, 0, 0, 0.8);
-}
+  }
 </style>

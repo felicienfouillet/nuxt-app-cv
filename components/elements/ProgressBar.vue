@@ -1,17 +1,35 @@
 <template>
   <div class="progress-bar">
-    <div class="pogress-bar-container progress-bar-color" :style="{ width: percent+'%' }">
-      <p>{{ title }}</p>
+    <div v-observe-visibility="{ callback: visibilityChanged, intersection: { root: null, once: true, rootMargin: '0px', threshold: 1 }}" class="pogress-bar-container progress-bar-color" :style="{ width: percent+'%' }">
+      <p> {{ title }} </p>
     </div>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import VueObserveVisibility from 'vue-observe-visibility'
+
+Vue.use(VueObserveVisibility)
+
 export default {
   name: 'ProgressBar',
   props: ['title', 'percent'],
   data () {
     return {
+    }
+  },
+  methods: {
+    visibilityChanged (isVisible, entry) {
+      this.isVisible = isVisible
+      console.log(entry)
+      if (this.isVisible) {
+        entry.target.style.webkitAnimationPlayState = 'running'
+        entry.target.children[0].style.webkitAnimationPlayState = 'running'
+      } else {
+        entry.target.style.webkitAnimationPlayState = 'paused'
+        entry.target.children[0].style.webkitAnimationPlayState = 'paused'
+      }
     }
   }
 }
@@ -22,7 +40,6 @@ export default {
     margin-top: 1em;
     margin-bottom: 1em;
     width: 100%;
-    /* background-color: grey; */
     background-color: #323232;
     border-radius: 16px;
 }
@@ -33,7 +50,7 @@ export default {
     color: #323232;
     animation-name: displayTitle;
     animation-timing-function: ease-in-out;
-    animation-duration: 1s;
+    animation-duration: 1.2s;
 }
 
 .pogress-bar-container {
@@ -50,19 +67,33 @@ export default {
         width: 32px;
         height: 1.2em;
     }
-  /* to {width: 5em;} */
 }
 
 @keyframes displayTitle {
   from {
-      position: absolute;
-      top: -5000px;
+    position: absolute;
+    left: -10000px;
   }
 }
 
 .progress-bar-color {
-    /* color: #fff; */
-    /* background-color: indianred; */
     background-color: #bbff42;
+}
+
+@media (max-width: 1100px) {
+  .progress-bar {
+    margin-bottom: 1.5em;
+  }
+
+  .pogress-bar-container {
+    min-height: .75em;
+  }
+
+  .progress-bar p {
+    color: honeydew;
+    font-size: .75em;
+    position: relative;
+    top: 2em;
+  }
 }
 </style>

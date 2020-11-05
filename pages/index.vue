@@ -6,10 +6,14 @@
         <carousel-slide v-for="(slide, index) in slides" :key="slide" :index="index">
           <!-- :key="slide" -->
           <!-- <div style="position: absolute; left: 0; right: 0; text-align: center; top: 50%; color: red; font-size: 25px">{{index}}</div> -->
-          <div v-for="component in slide" :key="component" class="components">
-            <!-- :key="component" -->
-            <img :src="component">
-          </div>
+          <!-- <div v-for="component in slide" :key="component" class="components"> -->
+          <!-- :key="component" -->
+          <img :src="slide">
+
+          <!-- <img :src="slides[index+1]+(1*index)"> -->
+
+          <!-- <img :src="slides[index+1]+(1*(index+1))"> -->
+          <!-- </div> -->
         </carousel-slide>
       </carousel>
       <!-- </div> -->
@@ -44,9 +48,9 @@ export default {
   data () {
     return {
       slides: [
-        ['https://picsum.photos/id/257/500/200', 'https://picsum.photos/id/259/500/200', 'https://picsum.photos/id/261/500/200'],
-        ['https://picsum.photos/id/258/500/200', 'https://picsum.photos/id/260/500/200', 'https://picsum.photos/id/263/500/200'],
-        ['https://picsum.photos/id/88/500/200', 'https://picsum.photos/id/250/500/200', 'https://picsum.photos/id/268/500/200']
+        'https://picsum.photos/id/257/500/200', 'https://picsum.photos/id/259/500/200', 'https://picsum.photos/id/261/500/200',
+        'https://picsum.photos/id/258/500/200', 'https://picsum.photos/id/260/500/200', 'https://picsum.photos/id/263/500/200',
+        'https://picsum.photos/id/88/500/200', 'https://picsum.photos/id/250/500/200', 'https://picsum.photos/id/268/500/200'
       ]
     }
   }
@@ -54,10 +58,6 @@ export default {
 </script>
 
 <style scoped>
-
-.components img {
-    width: 100%;
-}
 
 .components {
     position: relative;
