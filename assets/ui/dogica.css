@@ -1,0 +1,19 @@
+@font-face {
+    font-family: Dogica;
+    src: url('./Dogica/dogica.ttf');
+}
+
+@font-face {
+    font-family: Dogica-Bold;
+    src: url('./Dogica/dogicabold.ttf');
+}
+
+@font-face {
+    font-family: Dogica-Pixel;
+    src: url('./Dogica/dogicapixel.ttf');
+}
+
+@font-face {
+    font-family: Dogica-PixelBold;
+    src: url('./Dogica/dogicapixelbold.ttf');
+}

@@ -20,17 +20,21 @@ export default {
 
 <style>
 .not-found {
-    width: 100vw;
-    /* height: 100vh; */
-    height: 85vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: 'dogica';
+  width: 100vw;
+  /* height: 100vh; */
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dogica';
 }
 
-.not-found h2, p{
-    font-family: 'dogica';
+.not-found h2{
+  font-family: 'Dogica';
+}
+
+.not-found p {
+  font-size: 1.25em;
 }
 </style>
