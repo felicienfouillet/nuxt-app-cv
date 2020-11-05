@@ -12,7 +12,7 @@ export default {
   mounted () {
     window.setTimeout(() => {
       const host = location.hostname
-      window.location.replace('http://' + host + ':8080')
+      window.location.replace('https://' + host)
     }, 2000)
   }
 }
