@@ -3,33 +3,40 @@ A NuxtJS Website application - CV Félicien Fouillet
 
 
 ## To deploy on Docker
-1. Clone this repositorie:
+1. Just copy and execute this script:
     ```bash
-    git clone https://github.com/felicienfouillet/nuxt-app-cv.git
-    ```
+    # A deployement script for Nuxtjs app on Docker
 
-2. Stop docker containers:
-    ```bash
+    APP_DIR=/homes/www/nuxt-app-cv
+
+    image_id=$(docker inspect ffouillet/nuxt-app-cv --format "{{.Id}}")
+
+    echo "Stop current container..."
     docker container stop nuxt_cv
-    ```
-
-2. Remove previous docker containers, images and volumes from docker:
-    ```bash
+    echo "Current container successfully stopped"                                                                           
+    echo "Removing current container..."
     docker container rm nuxt_cv
-    ```
-    ```bash
-    docker image rm ffouillet/nuxt-app-cv
-    ```
-    ```bash
-    docker volume rm nuxt-app-cv
-    ```
+    echo "Current container successfully removed"
 
-2. Build the docker image from Dockerfile:
-    ```bash
+    echo "Current image: $image_id"
+    echo "Removing current image..."
+    docker image rm $image_id
+    echo "Current image successfully removed"
+
+    echo "Change current directory -> $APP_DIR"
+    cd nuxt-app-cv
+
+    git pull
+
+    echo "Build new Docker image..."
     docker image build -t ffouillet/nuxt-app-cv .
-    ```
 
-3. Deploy the docker image on a container:
-    ```bash
-    docker container run --name nuxt_cv -d -it -p 80:8080 -v nuxt-app-cv:/app ffouillet/nuxt-app-cv
+    echo "Run new container..."
+    docker container run --name nuxt_cv -d -it -p 80:8080 ffouillet/nuxt-app-cv
+    echo "New container successfully created"
+
+    HOST=$(docker container inspect nuxt_cv -f '{{.NetworkSettings.IPAddress}}')
+    PORTS=$(docker container inspect nuxt_cv -f '{{.NetworkSettings.Ports}}')
+
+    echo "Container running at Host: https://$HOST, Ports: $PORTS"
     ```
