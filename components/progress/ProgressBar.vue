@@ -22,7 +22,7 @@ export default {
   methods: {
     visibilityChanged (isVisible, entry) {
       this.isVisible = isVisible
-      console.log(entry)
+      // console.log(entry)
       if (this.isVisible) {
         entry.target.style.webkitAnimationPlayState = 'running'
         entry.target.children[0].style.webkitAnimationPlayState = 'running'
@@ -64,8 +64,8 @@ export default {
 
 @keyframes progress {
     from {
-        width: 32px;
-        height: 1.2em;
+      width: 32px;
+      height: 1.2em;
     }
 }
 

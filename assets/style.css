@@ -2,9 +2,10 @@
 @import url('./ui/oswald.css');
 @import url('./ui/dogica.css');
 body {
-    background-color: #3B3B3B;
+    /* width: 100vw; */
     margin: 0;
     padding: 0;
+    background-color: #3B3B3B;
 }
 
 body::-webkit-scrollbar {
@@ -23,62 +24,6 @@ p {
     color: honeydew;
 }
 
-.grid {
-    display: block;
-}
-
-.active {
-    background-color: indianred;
-}
-
-.nav {
-    display: flex;
-    justify-content: center;
-    width: 75%;
-}
-
-.navbar {
-    grid-area: navbar;
-    height: 3.5em;
-    background-color: #343434;
-    display: flex;
-    justify-content: center;
-}
-
-.nav-group {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    height: 100%;
-}
-
-.nav-item {
-    font-family: 'Montserrat-SemiBold';
-    font-size: 1.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    min-width: 10em;
-    padding: 0 15px;
-}
-
-.nav-item:hover {
-    background-color: indianred;
-}
-
-.nav-item a {
-    text-decoration: none;
-    color: honeydew;
-}
-
-.r-view {
-    grid-area: r-view;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .container {
     display: flex;
     flex-direction: column;
@@ -88,54 +33,4 @@ p {
     height: 100%;
     background-color: #454545;
     border-radius: 1em;
-}
-
-.footer {
-    grid-area: footer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0.5em 0;
-}
-
-.footer i {
-    margin: 0 1em;
-}
-
-.footer a {
-    text-decoration: none;
-    color: black;
-}
-
-.footer p {
-    font-family: 'Oswald-Light', sans-serif;
-    font-size: 1em;
-    margin-bottom: 0.5em;
-}
-
-.footer-group {
-    grid-area: footer;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #3B3B3B;
-}
-
-@media (max-width: 1350px) {
-    .navbar {
-        height: 100%;
-    }
-    .nav,
-    .nav-group {
-        width: 100%;
-        flex-direction: column;
-    }
-    .name {
-        display: none;
-    }
-    .nav-item {
-        height: 100%;
-        min-height: 2.25em;
-    }
 }

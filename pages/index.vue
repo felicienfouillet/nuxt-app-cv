@@ -1,22 +1,11 @@
 <template>
   <div class="grid-home">
     <div class="projects">
-      <!-- <div class="container"> -->
       <carousel>
         <carousel-slide v-for="(slide, index) in slides" :key="slide" :index="index">
-          <!-- :key="slide" -->
-          <!-- <div style="position: absolute; left: 0; right: 0; text-align: center; top: 50%; color: red; font-size: 25px">{{index}}</div> -->
-          <!-- <div v-for="component in slide" :key="component" class="components"> -->
-          <!-- :key="component" -->
           <img :src="slide">
-
-          <!-- <img :src="slides[index+1]+(1*index)"> -->
-
-          <!-- <img :src="slides[index+1]+(1*(index+1))"> -->
-          <!-- </div> -->
         </carousel-slide>
       </carousel>
-      <!-- </div> -->
     </div>
     <div class="presentation">
       <div class="container">
@@ -58,16 +47,15 @@ export default {
 </script>
 
 <style scoped>
-
-.components {
+  .components {
     position: relative;
     left: 0;
     right: 0;
     width: 30%;
     height: 100%;
-}
+  }
 
-.grid-home {
+  .grid-home {
     display: grid;
     width: 100vw;
     height: 100vh;
@@ -75,9 +63,9 @@ export default {
     grid-template-rows: 1.5fr 1.5fr 1.5fr .1fr;
     grid-row-gap: 0.4em;
     grid-template-areas: 'projects projects projects' '. presentation .' '. reco .' '. . .';
-}
+  }
 
-.projects {
+  .projects {
     grid-area: projects;
     display: flex;
     justify-content: center;
@@ -85,9 +73,9 @@ export default {
     padding: 0 0.4em;
     background-color: #3B3B3B;
     height: 100%;
-}
+  }
 
-.presentation {
+  .presentation {
     grid-area: presentation;
     display: flex;
     justify-content: center;
@@ -95,9 +83,9 @@ export default {
     padding: 0 0.4em;
     background-color: #3B3B3B;
     height: 100%;
-}
+  }
 
-.reco {
+  .reco {
     grid-area: reco;
     display: flex;
     justify-content: center;
@@ -105,17 +93,16 @@ export default {
     padding: 0 0.4em;
     background-color: #3B3B3B;
     height: 100%;
-}
+  }
 
-@media (max-width: 950px) {
+  @media (max-width: 950px) {
     .grid-home {
-        display: grid;
-        width: 100vw;
-        /* height: 100vh; */
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1.5fr 2fr;
-        grid-row-gap: 0.4em;
-        grid-template-areas: 'projects projects' 'presentation presentation' 'reco reco';
+      display: grid;
+      width: 100vw;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1.5fr 2fr;
+      grid-row-gap: 0.4em;
+      grid-template-areas: 'projects projects' 'presentation presentation' 'reco reco';
     }
-}
+  }
 </style>

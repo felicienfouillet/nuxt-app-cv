@@ -3,7 +3,7 @@
     <div class="exp">
       <div class="ex-container container">
         <h3 id="exp-title">
-          Eperiences professionnelles
+          Experiences professionnelles
         </h3>
 
         <div class="sub-ex-container">
@@ -80,8 +80,8 @@
 
 <script>
 import Exp from './../components/experiences/Exp'
-import ProgressBar from './../components/elements/ProgressBar'
-import RadialProgressBar from './../components/elements/RadialProgressBar'
+import ProgressBar from './../components/progress/ProgressBar'
+import RadialProgressBar from './../components/progress/RadialProgressBar'
 
 export default {
   name: 'Cv',
@@ -166,26 +166,15 @@ export default {
   height: 100%;
 }
 
-@media (max-width: 950px) {
-    /* .grid-cv {
+@media (max-width: 768px) {
+    .grid-cv {
         display: grid;
         width: 100%;
         height: 100%;
-        grid-template-columns: .25fr 1fr 1fr .25fr;
-        grid-template-rows: .1fr 2fr 2fr 1.5fr 1fr 1.5fr .1fr;
+        grid-template-columns: .1fr 1fr .1fr;
+        grid-template-rows: .1fr 2fr 1.75fr 1.5fr .75fr .75fr .75fr .1fr;
         grid-row-gap: 0.4em;
-        grid-template-areas: '. . . .' '. experiences experiences .' '. trainings trainings .' '. skills skills .' '. languages languages .' '. hskills interest .' '. . . .';
+        grid-template-areas: '. . .' '. experiences .' '. trainings .' '. skills .' '. languages .' '. hskills .' '. interest .' '.  . .';
     }
-
-    .exp {
-        grid-area: experiences;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding: 0 0.4em;
-        background-color: #3B3B3B;
-        height: 100%;
-    } */
 }
 </style>
