@@ -53,12 +53,12 @@ export default {
     justify-content: center;
   }
 
-  .nav-item {
+  /* .nav-item {
     border: solid blue 2px;
-  }
+  } */
 
   .nav-group {
-    border: solid red 2px;
+    /* border: solid red 2px; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
