@@ -36,4 +36,19 @@ export default {
     text-decoration: none;
     color: honeydew;
   }
+
+  @media (max-width: 1384px) {
+    .nav-item {
+      min-width: 7.5em;
+      padding: 0 10px;
+      font-size: 1.25em;
+    }
+  }
+  @media (max-width: 975px) {
+    .nav-item {
+      min-width: 6.5em;
+      padding: 0 7.5px;
+      font-size: 1em;
+    }
+  }
 </style>

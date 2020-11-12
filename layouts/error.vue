@@ -11,8 +11,7 @@ export default {
   name: 'NotFound',
   mounted () {
     window.setTimeout(() => {
-      const host = location.hostname
-      window.location.replace('https://' + host)
+      this.$router.push('/')
     }, 2000)
   }
 }

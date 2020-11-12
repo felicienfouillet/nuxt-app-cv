@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
     <div class="nav-group name">
-      <nav-item class="active" title="Félicien Fouillet" path="" />
+      <nav-item id="name" class="active" title="Félicien Fouillet" path="" />
     </div>
 
     <div class="menu">
@@ -69,10 +69,6 @@ export default {
 
 <style scoped>
   .navbar {
-    /* display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: 'name'; */
     width: 100vw;
     position: sticky;
     top: 0;
@@ -87,7 +83,7 @@ export default {
 
   .menu {
     position: absolute;
-    top: 0;
+    top: .05em;
     right: 0;
     display: flex;
     flex-direction: column;
@@ -97,7 +93,8 @@ export default {
     padding: 0 1rem;
   }
 
-  .nav-item {
+  #name {
+    width: 65%;
     height: 100%;
     min-height: 2.25em;
   }
@@ -119,7 +116,7 @@ export default {
   }
 
   @media (max-width: 420px) {
-    .name .nav-item {
+    #name {
       width: 100%;
     }
   }
