@@ -1,48 +1,50 @@
 <template>
   <div class="navbar">
-    <div style="text-align: center;" class="nav-group name">
-      <nav-item class="" title="Félicien Fouillet" path="" />
+    <div class="nav-group name">
+      <nav-item class="active" title="Félicien Fouillet" path="" />
     </div>
-    <div id="menu">
-      <nav class="main-nav">
-        <Burger />
-      </nav>
-      <Sidebar>
-        <h3 style="margin-bottom: 3.5em">
+
+    <div class="menu">
+      <Burger />
+    </div>
+
+    <Sidebar>
+      <h3 style="margin-bottom: 3.5em" @click="toggle">
+        <NuxtLink to="/">
           Félcien Fouillet
-        </h3>
-        <ul class="sidebar-panel-nav">
-          <li>
-            <div @click="toggle">
-              <NuxtLink to="/cv">
-                Cv
-              </NuxtLink>
-            </div>
-          </li>
-          <li>
-            <div @click="toggle">
-              <NuxtLink to="/portfolio">
-                Portfolio
-              </NuxtLink>
-            </div>
-          </li>
-          <li>
-            <div @click="toggle">
-              <NuxtLink to="/blog">
-                Blog
-              </NuxtLink>
-            </div>
-          </li>
-          <li>
-            <div @click="toggle">
-              <NuxtLink to="/contact">
-                Contact
-              </NuxtLink>
-            </div>
-          </li>
-        </ul>
-      </Sidebar>
-    </div>
+        </NuxtLink>
+      </h3>
+      <ul class="sidebar-panel-nav">
+        <li>
+          <div @click="toggle">
+            <NuxtLink to="/cv">
+              Cv
+            </NuxtLink>
+          </div>
+        </li>
+        <li>
+          <div @click="toggle">
+            <NuxtLink to="/portfolio">
+              Portfolio
+            </NuxtLink>
+          </div>
+        </li>
+        <li>
+          <div @click="toggle">
+            <NuxtLink to="/blog">
+              Blog
+            </NuxtLink>
+          </div>
+        </li>
+        <li>
+          <div @click="toggle">
+            <NuxtLink to="/contact">
+              Contact
+            </NuxtLink>
+          </div>
+        </li>
+      </ul>
+    </Sidebar>
   </div>
 </template>
 
@@ -66,23 +68,59 @@ export default {
 </script>
 
 <style scoped>
-.main-nav {
-    height: 100%;
+  .navbar {
+    /* display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'name'; */
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .name {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 0.8rem;
-}
+    align-items: flex-end;
+    height: 100%;
+    padding: 0 1rem;
+  }
 
- ul.sidebar-panel-nav {
-   list-style-type: none;
- }
+  .nav-item {
+    height: 100%;
+    min-height: 2.25em;
+  }
 
- ul.sidebar-panel-nav > li > div {
-   color: #fff;
-   text-decoration: none;
-   font-size: 1.5rem;
-   display: block;
-   padding-bottom: 0.5em;
- }
+  ul.sidebar-panel-nav {
+    list-style-type: none;
+  }
+
+  ul.sidebar-panel-nav > li > div {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: block;
+    padding-bottom: 0.5em;
+  }
+
+  .active {
+    background-color: indianred;
+  }
+
+  @media (max-width: 420px) {
+    .name .nav-item {
+      width: 100%;
+    }
+  }
 </style>

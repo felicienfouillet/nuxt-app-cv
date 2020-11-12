@@ -40,7 +40,7 @@ export default {
     }
 
     .sidebar-backdrop {
-        background-color: rgba(0,0,0,.5);
+        background-color: rgba(26,26,26,.8);
         width: 100%;
         height: 100%;
         position: fixed;
@@ -56,8 +56,33 @@ export default {
         left: 0;
         top: 0;
         height: 100%;
+        min-width: 45%;
+        padding-right: 15em;
         z-index: 999;
         padding: 3rem 20px 2rem 20px;
-        width: 300px;
     }
+
+  @media (max-width: 551px) {
+    .sidebar-panel {
+      min-width: 50%;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .sidebar-panel {
+      min-width: 60%;
+    }
+  }
+
+  @media (max-width: 376px) {
+    .sidebar-panel {
+      min-width: 60%;
+    }
+  }
+
+  @media (max-width: 281px) {
+    .sidebar-panel {
+      min-width: 70%;
+    }
+  }
 </style>

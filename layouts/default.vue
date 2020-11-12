@@ -2,25 +2,7 @@
   <div id="app">
     <div class="grid">
       <div v-if="screenWidth >= 768">
-        <!-- <NavBar /> -->
-
-        <div class="navbar">
-          <div class="nav">
-            <div class="nav-group">
-              <nav-item title="cv" path="cv" />
-              <nav-item title="portfolio" path="portfolio" />
-            </div>
-
-            <div style="text-align: center;" class="nav-group name">
-              <nav-item class="active" title="Félicien Fouillet" path="" />
-            </div>
-
-            <div class="nav-group">
-              <nav-item title="blog" path="blog" />
-              <nav-item title="contact" path="contact" />
-            </div>
-          </div>
-        </div>
+        <NavBarMenu />
       </div>
       <div v-else>
         <SideBarMenu />
@@ -45,12 +27,12 @@
 
 <script>
 // import { component } from 'vue/types/umd'
-import NavItem from '../components/menu/NavItem.vue'
+import NavBarMenu from '../components/menu/NavBarMenu.vue'
 import SideBarMenu from '../components/menu/SideBarMenu.vue'
 
 export default {
   name: 'App',
-  components: { NavItem, SideBarMenu },
+  components: { NavBarMenu, SideBarMenu },
   computed: {
     screenWidth () {
       return window.innerWidth
@@ -66,35 +48,6 @@ export default {
   .grid {
     display: block;
     width: 100vw;
-  }
-
-  /**********************************************/
-  /*                   NAVBAR                   */
-  /**********************************************/
-
-  .active {
-    background-color: indianred;
-  }
-
-  .nav {
-    display: flex;
-    justify-content: center;
-    width: 75%;
-  }
-
-  .navbar {
-    grid-area: navbar;
-    height: 3.5em;
-    background-color: #343434;
-    display: flex;
-    justify-content: center;
-  }
-
-  .nav-group {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    height: 100%;
   }
 
   /**********************************************/
@@ -131,26 +84,5 @@ export default {
     justify-content: space-around;
     align-items: center;
     background-color: #3B3B3B;
-  }
-
-  @media (max-width: 768px) {
-
-    /**********************************************/
-    /*                   NAVBAR                   */
-    /**********************************************/
-    .navbar {
-      width: 100%;
-      height: 100%;
-      position: sticky;
-      top: 0;
-      z-index: 1;
-    }
-    .name {
-      transform: translateX(1.5em);
-    }
-    .nav-item {
-      height: 100%;
-      min-height: 2.25em;
-    }
   }
 </style>
