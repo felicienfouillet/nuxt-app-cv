@@ -40,7 +40,7 @@ A NuxtJS Website application - CV Félicien Fouillet
     fi
 
     echo "\e[92mChange current directory -> $APP_DIR\e[0m"
-    cd nuxt-app-cv
+    cd /homes/www/nuxt-app-cv
 
     git pull
 
