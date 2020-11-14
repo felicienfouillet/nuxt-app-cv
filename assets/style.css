@@ -2,7 +2,6 @@
 @import url('./ui/oswald.css');
 @import url('./ui/dogica.css');
 body {
-    /* width: 100vw; */
     margin: 0;
     padding: 0;
     background-color: #3B3B3B;

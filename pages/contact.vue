@@ -20,7 +20,7 @@ export default {
 <style scoped>
 .contact-form{
   width: 35%;
-  height: 50vh;
+  height: 100%;
   padding: 2.5em;
   /* background-color: rgba(0,0,0,0.2); */
 }

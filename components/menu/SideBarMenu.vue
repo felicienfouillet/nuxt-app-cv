@@ -70,6 +70,7 @@ export default {
 <style scoped>
   .navbar {
     width: 100vw;
+    background-color: #343434;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -83,20 +84,20 @@ export default {
 
   .menu {
     position: absolute;
-    top: .05em;
-    right: 0;
+    top: 0;
+    right: .1em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     height: 100%;
-    padding: 0 1rem;
   }
 
   #name {
-    width: 65%;
+    width: 100%;
     height: 100%;
-    min-height: 2.25em;
+    min-height: 2.5em;
+    font-size: 1.25em;
   }
 
   ul.sidebar-panel-nav {
@@ -113,11 +114,5 @@ export default {
 
   .active {
     background-color: indianred;
-  }
-
-  @media (max-width: 420px) {
-    #name {
-      width: 100%;
-    }
   }
 </style>
